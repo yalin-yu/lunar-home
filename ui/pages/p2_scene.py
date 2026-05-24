@@ -244,7 +244,7 @@ def _render_decision(state, decision, bg_b64, sprite_b64=""):
         st.caption("—— 这将改变故事的走向 ——")
 
         def _confirm():
-            del st.session_state[pending_key]
+            st.session_state.pop(pending_key, None)
             st.session_state.game_state = GameStateManager.select_option(
                 st.session_state.game_state, pending["opt_id"], pending["leads_to"]
             )
@@ -352,7 +352,7 @@ def _render_unified_input(dialogue_id, state, branch_obj, ai_config, npc,
         narration = st.session_state[skip_narr_key]
         _scene_html(bg_b64, sprite_b64, narration, speaker="旁白", is_narration=True)
         def _confirm_skip():
-            del st.session_state[skip_narr_key]
+            st.session_state.pop(skip_narr_key, None)
             if is_branch:
                 new_state = GameStateManager.mark_branch_complete(state, state.current_branch)
                 # 检查该分支是否触发结局（如 B3 → ending_success）
@@ -705,12 +705,12 @@ def _render_solar_storm_dialogue(state, bg_b64, chapter):
             "current_beat_index": 0,
         })
         st.session_state.game_state = new_state
-        del st.session_state[storm_key]
+        st.session_state.pop(storm_key, None)
         if sys_key in st.session_state:
-            del st.session_state[sys_key]
+            st.session_state.pop(sys_key, None)
         sugg_key = "suggestions_solar_storm"
         if sugg_key in st.session_state:
-            del st.session_state[sugg_key]
+            st.session_state.pop(sugg_key, None)
         st.rerun()
 
     # 显示对话状态
