@@ -58,7 +58,10 @@ def switch_page(page: str):
 
 def main():
     inject_minimal_css()
-    init_config()
+    loader = init_config()
+    # 确保模块级 _loader 全局变量被设置（缓存命中时函数体不执行，需要手动同步）
+    import engine.config_loader as _cl
+    _cl._loader = loader
     init_game_state()
 
     state = st.session_state.game_state
