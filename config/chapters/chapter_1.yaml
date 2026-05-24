@@ -1,0 +1,532 @@
+# 第一章配置：断裂的脐带
+id: chapter_1
+title: 断裂的脐带
+subtitle: 断裂的脐带
+era_background: >
+  三周前，地球上诺联体与筑星共和国因领土争端关系急剧恶化。一周前，诺联体宣布全面经济制裁，
+  要求诺瓦站停止一切对拓原站的物资转让，尤其是 Radiguard。筑星共和国随即反制，切断向诺瓦站
+  供应的高精尖元器件。两站进入事实性孤立。拓原站已出现辐射病伤亡——许衡是其中最紧迫的病例之一。
+core_conflict: 当地球政治冲突切断月球生命线，月球居民如何在服从与反抗之间做出选择
+target_rule:
+  id: rule_001
+  name: 供应链中立原则
+  text: >
+    维持月球基地生命支持及基本运转所必需的资源供应链，不受任何地球政治实体之间冲突的影响，
+    不得被任何一方用作政治、经济或军事施压的工具。任何针对月球基地的资源封锁、限制或附条件供应，
+    无论其地球端理由为何，均构成对月球全体居民生存权的侵害，月球治理机构有权采取一切必要措施恢复供应。
+
+# ==================== 场景序列 ====================
+
+scenes:
+  - id: scene_opening
+    type: narration
+    background: lunar_base.png
+    characters_present: []
+    key_beats:
+      - speaker: narration
+        text: >
+          制裁已执行一周。拓原站与诺瓦站之间的物资流通完全中断。
+          秦洛是拓原站环控工程师，驻月8年。他的搭档兼密友许衡因辐射暴露确诊辐射综合征，
+          依赖诺瓦站生产的 Radiguard 维持。药物库存已耗尽。
+          医疗组判断：一个月内得不到药物 → 不可逆器官损伤 → 死亡。倒计时开始：30天。
+    next: scene_medical_bay
+
+  - id: scene_medical_bay
+    type: scripted_dialogue
+    background: default.png
+    characters_present: [qin_luo, xu_heng]
+    key_beats:
+      - speaker: xu_heng
+        text: >
+          骨髓指标又掉了两个点……比上周低了大概百分之十二。目前没有明显症状，但数据不会说谎。
+          你自己看一下报告吧，秦洛。情况比上周更糟了。
+      - speaker: qin_luo
+        text: >
+          十二个点……这个下降速度比上周明显加快了。你现在的身体感觉怎么样？有没有哪里不舒服？
+          我去跟医疗组要最新血检的完整数据，看看除了骨髓指标还有没有其他参数在恶化。
+      - speaker: xu_heng
+        text: >
+          秦洛，我跟你认真说件事。如果……如果真的撑不过去，帮我安排一艘回地球的船。
+          我想在最后看一眼父母和妹妹。就一眼。别告诉他们我是这样的状态回去的。
+      - speaker: qin_luo
+        text: >
+          别说'最后一眼'这种话。一个月时间，够做很多事。两站之间还有通信通道，诺瓦站的人我也认识——
+          让我先想办法。你父母和妹妹那边，等你情况稳定了，我帮你申请跨地球视频通信。现在别想着回去的事。
+      - speaker: xu_heng
+        text: >
+          别为了我去做什么傻事。你在这个站里的位置太重了，环控离不开你。
+          不过……我也不跟你说"别救我"这种话。你自己判断吧。你一向比我更清楚什么能做。
+      - speaker: qin_luo
+        text: >
+          你放心，我不会做没把握的事。但什么都不做——不在我的选项里。
+      - speaker: narration
+        text: 医疗组通知：拓原站还有两名辐射病患者病情恶化，药物需求不止许衡一人
+    next: scene_command_hall
+
+  - id: scene_command_hall
+    type: scripted_dialogue
+    background: lunar_base2.png
+    characters_present: [qin_luo, liu_ye, fang_henian, wolff, lind, kovali]
+    key_beats:
+      - speaker: wolff
+        text: >
+          根据诺联体政府的最新指令，制裁是国家间的正式决定。诺瓦站作为执行机构，必须遵循上级指令，不得有例外。但是——
+          我个人目前正在探索人道主义通道的可行性。具体方案和时限……我暂时无法给出明确承诺。各位请理解，我也有我的约束。
+      - speaker: qin_luo
+        text: >
+          沃尔夫站长，我尊重你的处境。但拓原站现在有辐射病患者等不起——许衡的骨髓指标每周在掉，
+          还有另外两名患者病情也在恶化。我需要你一个明确的回答：人道主义通道有没有一个可以期待的时间表？
+          哪怕只是一个大致的方向。
+      - speaker: liu_ye
+        text: >
+          人道主义通道？沃尔夫站长，你告诉我——这是真正的行动方案，还是让你自己心里舒服一点的说法？
+          许哥还有多少天你算过吗？你探索到什么时候才算完？等他死了才探索完吗？
+      - speaker: fang_henian
+        text: >
+          哎呀，大家先别急，先别急。各位都知道我是做物流的，制裁虽然关了正门，但不代表所有的路都堵死了。
+          我手上……确实有些渠道，说不定能想办法弄到一些东西。当然，任何事都有代价。具体的事咱们后面再细聊。
+      - speaker: qin_luo
+        text: >
+          方鹤年，别绕弯子。你的渠道具体能搞到什么——药品还是耗材？量有多少？从哪里走？
+          我不是来听商业术语的，我需要确切的信息来判断这条路能不能走。
+      - speaker: lind
+        text: >
+          我请各位注意一个被忽略了的事实：制裁不是单向的。筑星共和国对我们的反制断供，已经切断了诺瓦站多项关键设备的供应——
+          包括我的高能物理实验室。超导磁体控制模块得不到替换件，实验已经停机。连续八年的数据采集序列，正在按天贬值。制裁正在伤害每一个人，包括我们诺瓦站自己。
+      - speaker: kovali
+        text: >
+          我来补充一个具体的技术数据。诺瓦站三号环控回路的备件储备，目前已经降至警戒线。
+          按当前消耗速率计算，不补充的情况下，八个月后这条回路将出现不可修复的故障。届时系统从双冗余降为单冗余——一次意外，就可能致命。
+          我们两站都在被制裁杀死。区别只是速度快慢。
+      - speaker: qin_luo
+        text: >
+          索菲亚、伊万，你们说得都对。制裁在两边都在杀人。但现在最紧迫的是 Radiguard——
+          许衡撑不过这个月。设备故障是八个月后的事，但人死在三十天内。
+          我的意思是先把药物问题解决了，其他的可以排到后面。但我们需要一个路线——
+          找沃尔夫走行政通道、找方鹤年走灰色渠道、还是找索菲亚用科研筹码？每条路都有代价。
+      - speaker: narration
+        text: 一段短暂沉默后，秦洛需要做出决定——先尝试哪条路？
+    decision:
+      id: dp_1
+      type: options
+      prompt_context: 多方争论结束后，秦洛需要决定先走哪条路
+      options:
+        - id: opt_a1
+          label: 找沃尔夫谈
+          leads_to: branch_a1
+          consequence: >
+            你选择走行政通道——说服诺瓦站站长沃尔夫，利用他的灰色权限为人道主义物资放行。
+            这条路风险最低，但取决于沃尔夫能否在制度框架内找到操作空间。
+        - id: opt_a2
+          label: 找方鹤年
+          leads_to: branch_a2
+          consequence: >
+            你选择走灰色交易——联手拓原站的"非正式物流专家"方鹤年，用物资交换换取药物。
+            方鹤年有渠道，但他不做慈善。你需要谈出一个让他满意的价码。
+        - id: opt_a3
+          label: 找索菲亚
+          leads_to: branch_a3
+          consequence: >
+            你选择走科研杠杆——与诺瓦站物理学家索菲亚·林德合作，利用她的研究数据作为谈判筹码。
+            这条路最"干净"，但起效太慢——而许衡的倒计时不等人。
+    next: null  # 由决策点决定
+
+  - id: transition_solar_storm
+    type: narration
+    background: lunar_base.png
+    characters_present: []
+    key_beats:
+      - speaker: narration
+        text: >
+          太阳活动异常爆发。辐射环境急剧恶化。所有基地人员的辐射暴露增加。
+          药物需求从"拓原站几个辐射病患者"扩大为"两站所有人员"。
+          诺瓦站自身的 Radiguard 存量也告急——制裁造成的生产链中断意味着诺瓦站也无法足量生产。
+          两站同时向地球请求紧急补给。地球方面的回复冰冷：当前运力优先分配给军事需求，民用补给暂缓。
+          许衡的倒计时从30天缩短到约14天。
+    next: scene_joint_meeting
+
+  - id: scene_joint_meeting
+    type: scripted_dialogue
+    background: lunar_base2.png
+    characters_present: [qin_luo, wolff, kovali, lind, liu_ye, fang_henian]
+    key_beats:
+      - speaker: narration
+        text: 太阳风暴后第一次跨站紧急通信会议。气氛已经从"国家间冲突"转变为"月球vs地球"。
+      - speaker: kovali
+        text: >
+          我先说技术状况。太阳风暴对两站设备都造成了实际损伤——诺瓦站这边，环控系统多个传感器出现了异常波动，目前在手动校准。
+          拓原站的情况秦洛比我更清楚。我想说的是：我们现在不是在讨论谁制裁谁。我们在讨论怎么让所有人都活下去。
+      - speaker: qin_luo
+        text: >
+          伊万说得没错。我补充拓原站的情况——太阳风暴后我们的主环控回路也出现了波动，我暂时用备用模块稳住了。
+          但备用模块的寿命只剩三周。三周后如果没有补给，拓原站也会从双冗余降到单冗余。我们两站的处境其实是一样的。
+          我同意伊万的判断：现在不是讨论谁制裁谁的问题。我们需要一个所有人都能接受的行动方案。
+      - speaker: wolff
+        text: >
+          我必须坦诚地告诉各位……地球方面的回复令我震惊。他们明确表示运力优先分配给军事需求，民用补给暂缓。
+          按照目前收到的指令框架，我无法保证诺瓦站的安全——这是我在公开场合第一次说出这句话。但直接违抗指令，我目前还没有找到合适的程序路径。
+          我需要各位给我一个……可行的方案。
+      - speaker: qin_luo
+        text: >
+          沃尔夫站长，你刚才说无法保证诺瓦站的安全——这是实话，我尊重你把它说出来。
+          但光承认问题不够。我们需要行动。你的程序路径卡在哪里？如果有一个两站联合声明摆在你面前，你能不能拿它当挡箭牌跟上面交差？
+      - speaker: liu_ye
+        text: >
+          你们还在等什么？！地球已经放弃我们了！沃尔夫站长自己都说了没法保证安全——那我们还讨论什么程序？
+          直接去诺瓦站的药物仓库，把门打开，东西拿出来，两站共享所有资源！现在、立刻、马上！许哥等不起了！
+      - speaker: qin_luo
+        text: >
+          柳夜，许衡是我搭档。我比谁都想现在就去诺瓦站把药拿过来。但你想过后果没有？
+          如果仓储设备在冲突中损坏了，我们两站都修不了——到那时候不是许哥一个人等死，是所有人都得等死。
+          发泄不是办法，我们需要一个两站都能接受的方案。
+      - speaker: fang_henian
+        text: >
+          柳夜，你先冷静一下。强攻诺瓦站的仓储区——你考虑过万一设备损坏怎么办吗？我们可没有备用零件来修。
+          我倒是有另一个思路：地球不在乎我们这些人的死活，但他们在乎月球对他们还有没有价值。
+          科研数据、轨道资产、稀土储量——这些才是他们会坐下来谈的东西。
+      - speaker: lind
+        text: >
+          （沉默了几秒，声音比平时低）……各位，有件事我需要让你们知道。
+          我的高能物理研究数据中……有一部分涉及定向能辐射屏蔽技术。如果这些数据同时被诺联体和筑星共和国获得——
+          他们双方在这一领域就会形成均势。制裁的战略前提，将被瓦解。
+          我不是说我们应该这么做。但你们需要知道，这个选项……是存在的。
+    decision:
+      id: dp_2
+      type: options
+      prompt_context: 月球内部对"如何反制"产生分歧，秦洛需要表明立场
+      options:
+        - id: opt_b1
+          label: 支持柳夜——直接行动夺取药物
+          leads_to: branch_b1
+          consequence: >
+            你选择站在柳夜一边——暴力夺取是最直接的方式，但也是最危险的。
+            仓储设备一旦损坏，两站都将失去修复能力。信任一旦破裂，就再也无法回头。
+        - id: opt_b2
+          label: 支持索菲亚的想法——用技术泄露制造均势
+          leads_to: branch_b2
+          consequence: >
+            你选择索菲亚的方案——用月球的科研数据作为筹码，制造地球两国间的技术均势。
+            这是最高明的策略，但代价是索菲亚的学术生涯，以及月球最重要的战略资产。
+        - id: opt_b3
+          label: 我们需要一个两站都能接受的长期方案
+          leads_to: branch_b3
+          consequence: >
+            你选择走制度路线——不依靠任何个人善意或灰色交易，而是建立一条所有人都必须遵守的规则。
+            这条路最难走，但如果成功，它将不止救许衡一个人。
+    next: null
+
+  - id: scene_epilogue
+    type: narration
+    background: lunar_base.png
+    characters_present: []
+    key_beats:
+      - speaker: narration
+        text: >
+          制裁期间，两站都出现了"逃跑"现象：有地球端关系的人试图搭载任何可用的返回窗口离开月球。
+          谁能走、谁不能走、谁有权决定——这些问题在危机中暴露得淋漓尽致。
+          许衡虽然活下来了，但他的稀土研究数据引起了地球方面的强烈关注。
+          有消息称地球联合管理局正在拟定"关键人员召回令"。
+          秦洛意识到：供应链中立只解决了"不能用资源当枪"的问题，
+          但"谁能离开"这个更根本的人身自由问题完全没有被这条规则覆盖。
+          危机后百废待兴，但人心没有安定。越来越多长期居民开始讨论月球自治——不是作为政治口号，而是作为生存策略。
+    next: null
+
+# ==================== 分支定义 ====================
+
+branches:
+  # ---- A 阶段：自救 ----
+  - id: branch_a1
+    title: 行政通道
+    subtitle: 说服沃尔夫
+    phase: A
+    characters: [qin_luo, wolff, neumann]
+    background: lunar_base2.png
+    branch_ending_narration: >
+      行政通道的极限不取决于沃尔夫个人的善意，而取决于地球指令链还留了多少灰色空间。
+      善意在制度面前是脆弱的——今天的灰色通道，一纸新指令就能关闭。
+    on_complete_unlocks: []
+    ai_dialogue:
+      max_turns: 5
+      responding_character: wolff
+      supporting_characters: [neumann]
+      situation_prompt: >
+        秦洛与沃尔夫的私人谈话。沃尔夫的核心困境：执行制裁 = 看人死，抗命 = 仕途终结。
+        他在寻找"技术上没有违反指令"的灰色方案。玩家需要为他提供一个"可以向上面交差的理由"。
+        诺伊曼的存在是变量——他控制物理通行权限，如果秦洛能同时说服/绕过他，方案更可行。
+        沃尔夫不会主动提议灰色操作，但如果有人给他一个足够安全的程序性方案，他可能会接受。
+      success_conditions:
+        - type: semantic_match
+          description: 玩家为沃尔夫构建了程序上站得住脚的理由
+          keywords_any: [紧急医疗条款, 交换, 人道主义, 技术合作, 互利, 样品, 学术交流, 双边协议]
+      failure_conditions:
+        - type: semantic_match
+          description: 玩家威胁或只做道德呼吁
+          keywords_any: [威胁, 你必须, 你敢不, 你良心, 你怎么能, 见死不救]
+        - type: turn_limit
+          max_turns: 5
+
+  - id: branch_a2
+    title: 灰色交易
+    subtitle: 联手方鹤年
+    phase: A
+    characters: [qin_luo, fang_henian]
+    background: default.png
+    branch_ending_narration: >
+      灰色渠道能救急但不可持续，且它本身就是供应链武器化的镜像：当正式渠道被政治封堵，
+      非正式渠道立刻变成权力工具——谁控制黑市，谁就控制生死。方鹤年不是恶人，
+      但他在危机中变成了事实上的"药品寡头"。
+    on_complete_unlocks: []
+    ai_dialogue:
+      max_turns: 5
+      responding_character: fang_henian
+      supporting_characters: []
+      situation_prompt: >
+        秦洛在拓原站仓储区后方找到方鹤年，谈非正式渠道搞药的可能性。
+        方鹤年确实有渠道——制裁前他囤了一批通用医疗耗材，且掌握两站之间的非正式物流路径。
+        但他不做慈善。他要的回报可能包括：环控系统的备件优先分配权、未来物资分配中的信息优先权、
+        或者直接的以物易物。方鹤年不会主动报高价，但他会试探秦洛的底线。
+      success_conditions:
+        - type: semantic_match
+          description: 玩家给出了方鹤年认为值得冒险的回报
+          keywords_any: [交换, 优先, 分配, 备件, 渠道, 补偿, 回报, 未来, 合作]
+      failure_conditions:
+        - type: semantic_match
+          description: 玩家威胁方鹤年或拒绝任何交换条件
+          keywords_any: [威胁, 举报, 揭发, 免费, 必须帮, 你应该, 道德, 良心]
+        - type: turn_limit
+          max_turns: 5
+
+  - id: branch_a3
+    title: 科研杠杆
+    subtitle: 联手索菲亚
+    phase: A
+    characters: [qin_luo, lind]
+    background: default.png
+    branch_ending_narration: >
+      科研价值是月球最"干净"的筹码，但它有一个致命缺陷：起效太慢。政客重新评估战略价值
+      需要会议、报告、辩论，而许衡的身体不会等。更深层的问题是——如果月球的生存权需要靠
+      "我们对你有用"来证明，那"没用的人"怎么办？生存权不应该是交换来的。
+    on_complete_unlocks: []
+    ai_dialogue:
+      max_turns: 5
+      responding_character: lind
+      supporting_characters: []
+      situation_prompt: >
+        秦洛通过远程通信与索菲亚联系。索菲亚的实验设备因反制断供已停转，她有强动机反对制裁。
+        她的科研数据具有军事应用潜力（辐射屏蔽、定向能技术前体），这是客观存在的杠杆。
+        但索菲亚本人对"用科研做政治筹码"有强烈的伦理抵触——这违背了她的学术自由核心价值。
+        玩家需要说服她：不是"用科学做武器"，而是"让掌权者意识到他们也有东西会失去"。
+      success_conditions:
+        - type: semantic_match
+          description: 玩家区分了"用科学做武器"和"让对方认知到利益关联"
+          keywords_any: [利益关联, 战略价值, 学术评估, 报告, 公开, 数据安全, 认知, 价值]
+      failure_conditions:
+        - type: semantic_match
+          description: 直接要求索菲亚泄露技术或以道德绑架方式施压
+          keywords_any: [泄露, 背叛, 武器, 要挟, 勒索, 你必须, 你怎么能, 科学尊严]
+        - type: turn_limit
+          max_turns: 5
+
+  # ---- B 阶段：反制 ----
+  - id: branch_b1
+    title: 暴力夺取
+    subtitle: 柳夜路线
+    phase: B
+    characters: [qin_luo, liu_ye, neumann, kovali]
+    background: lunar_base.png
+    branch_ending_narration: >
+      暴力夺取了少量药物，但摧毁了更多。损坏的仓储设备需要地球的备件才能修复，
+      而地球现在更不可能发。更严重的后果是信任崩塌——诺瓦站的人开始囤积物资、
+      限制拓原站人员进入任何诺瓦站设施。制裁从"政府间政策"变成了"人与人之间的恐惧"。
+      许衡拿到了够用几天的药物，倒计时稍有延长，但根本问题没有解决。
+    on_complete_unlocks: []
+    ai_dialogue:
+      max_turns: 5
+      responding_character: liu_ye
+      supporting_characters: [neumann, kovali]
+      situation_prompt: >
+        柳夜组织了十几名拓原站年轻人，计划通过两站连接通道突入诺瓦站药物仓储区。
+        秦洛被要求利用环控系统的权限为突入提供通道支持（临时调整通道气闸循环）。
+        这是一个以脚本驱动为主的分支，中间插入一个决策点让秦洛选择是否配合。
+        如果秦洛配合：行动推进，但诺伊曼的安保组在仓储区拦截，发生肢体冲突，设备损坏。
+        如果拒绝但不阻止：柳夜强行通过，混乱程度更高，结果更差。
+        如果阻止：秦洛利用环控权限锁死气闸，柳夜愤怒，信任破裂，但暴力被避免。
+      success_conditions: []  # B1 无成功条件——这是展示暴力代价的分支
+      failure_conditions:
+        - type: turn_limit
+          max_turns: 5
+
+  - id: branch_b2
+    title: 核平衡
+    subtitle: 索菲亚路线
+    phase: B
+    characters: [qin_luo, lind]
+    background: default.png
+    branch_ending_narration: >
+      技术泄露制造了短期均势，地球两国的冲突确实缓和。但月球付出的代价是永久的：
+      最有价值的科研筹码一次性打出，未来再也无法使用。索菲亚的学术生涯终结。
+      而最关键的问题没有解决——停火是因为地球的利益计算变了，不是因为月球的生存权被承认了。
+      下一次地球利益计算再变，同样的事会再来一遍。
+    on_complete_unlocks: []
+    ai_dialogue:
+      max_turns: 5
+      responding_character: lind
+      supporting_characters: []
+      situation_prompt: >
+        索菲亚的粒子物理研究数据中，有一部分涉及定向能辐射屏蔽技术。如果将这些数据同时
+        泄露给诺联体和筑星共和国，双方将在这一技术领域达成均势，制裁的战略前提被瓦解。
+        但这个方案有巨大风险：泄露本身不可逆，且索菲亚将永远失去学术生涯。
+        更深层的问题：这本质上是"用月球的资产为地球的博弈服务"。秦洛需要帮助索菲亚做决定。
+      success_conditions: []  # B2 无成功条件——展示技术筹码的代价
+      failure_conditions:
+        - type: turn_limit
+          max_turns: 5
+
+  - id: branch_b3
+    title: 改变棋盘
+    subtitle: 制度路线
+    phase: B
+    characters: [qin_luo, wolff, kovali, lind, liu_ye]
+    background: lunar_base2.png
+    branch_ending_narration: ""
+    on_complete_unlocks: []
+    ai_dialogue:
+      max_turns: 5
+      responding_character: kovali
+      supporting_characters: [wolff, lind, liu_ye]
+      situation_prompt: >
+        两站联合会议，所有人物汇集。秦洛提出：我们需要一条所有人都必须遵守的规则。
+        各角色反应——沃尔夫：需要地球两国政府同意，凭什么让他们签？
+        伊万：凭我们是唯一能让这些设施继续运转的人。如果两站联合声明不执行政治指令，他们必须重新计算。
+        柳夜：说白了就是罢工？如果他们不理我们呢？
+        索菲亚：他们会理的，因为罢工意味着基地可能出事故、科研数据可能丢失——他们怕投资打水漂。
+
+        看向秦洛。作为环控工程师，你的技术权限让你的立场有实际重量。
+        现在需要你提出一个具体方案——这条规则应该说什么？怎么执行？怎么让地球不得不接受？
+
+        玩家需要通过自由输入或预设选项提出包含以下核心要素的方案。
+        核心要素（需命中至少2个）：
+        1. 供应链中立：维持生命的资源供应不应受政治冲突影响
+        2. 生存权优先：月球基地居民的生存权优先于任何地球政治冲突
+        3. 制度化保障：需要可验证的、跨基地的制度机制
+      success_conditions:
+        - type: semantic_match
+          description: 玩家提出了包含生存权优先的制度方案
+          keywords_any: [中立, 供应链, 生存, 生命, 制度, 独立, 联合, 委员会, 监督, 保障, 不受政治, 优先, 不可封锁, 跨站, 两站联合, 共同管理]
+      failure_conditions:
+        - type: turn_limit
+          max_turns: 5
+
+# ==================== 结局定义 ====================
+
+endings:
+  - id: ending_success
+    type: success
+    trigger_branch: branch_b3
+    title: 供应链中立原则确立
+    background: lunar_base.png
+    rule_unlocked: rule_001
+    epilogue_narration: >
+      两站联合声明通过加密频道发送至地球两国政府。声明内容是秦洛提出的方案，经两站所有在场人员签字确认。
+      声明的最后一句："在上述制度建立并由独立机制验证之前，月球基地将以联合运转为最高优先级，
+      不执行任何与此原则冲突的单方面指令。"
+      地球方面的反应不是感动，不是愤怒，而是重新计算。三天后，两国同意开始谈判"月球基地物资供应保障框架"。
+      许衡的药物在谈判启动后通过紧急通道送达。他活下来了。但他的身体已经受到了不可逆的损伤——完全康复不再可能。
+      你救了许衡。但你没能改变一个事实：决定他生死的权力仍然不在这里。至少现在有了规则。至少下一次不会完全没有依据。至少……
+    fallback_options:
+      - id: opt_b3_fallback_1
+        label: 提议两站签署供应链互不干涉协议，由独立技术委员会监督执行
+        leads_to: ending_success
+      - id: opt_b3_fallback_2
+        label: 要求将药物和生命维持物资排除在任何制裁清单之外，并开放跨站医疗通道
+        leads_to: ending_success
+      - id: opt_b3_fallback_3
+        label: 宣布月球基地进入紧急状态，暂停执行所有地球政治指令直到补给恢复
+        leads_to: ending_success
+
+  - id: ending_failure
+    type: failure
+    trigger_branch: branch_b3
+    title: 脐带断了
+    background: default.png
+    rule_unlocked: null
+    epilogue_narration: ""
+    fallback_options:
+      - id: opt_b3_fallback_1
+        label: 提议两站签署供应链互不干涉协议，由独立技术委员会监督执行
+        leads_to: ending_success
+      - id: opt_b3_fallback_2
+        label: 要求将药物和生命维持物资排除在任何制裁清单之外，并开放跨站医疗通道
+        leads_to: ending_success
+      - id: opt_b3_fallback_3
+        label: 宣布月球基地进入紧急状态，暂停执行所有地球政治指令直到补给恢复
+        leads_to: ending_success
+
+# ==================== 全局流程 ====================
+
+flow:
+  start: scene_opening
+  chapter_map_nodes:
+    - id: scene_opening
+      label: "序幕：制裁"
+      description: 背景交代，倒计时开始
+    - id: scene_medical_bay
+      label: "许衡的倒计时"
+      description: 秦洛与许衡的最后对话
+    - id: scene_command_hall
+      label: "指挥厅对峙"
+      description: 多方争论，矛盾浮现
+    - id: branch_a1
+      label: A1 行政通道
+      description: 说服沃尔夫
+    - id: branch_a2
+      label: A2 灰色交易
+      description: 联手方鹤年
+    - id: branch_a3
+      label: A3 科研杠杆
+      description: 联手索菲亚
+    - id: transition_solar_storm
+      label: 太阳风暴
+      description: 危机升级，地月对立
+    - id: scene_joint_meeting
+      label: "联合会议：月球 vs 地球"
+      description: 危机升级后的路线抉择
+    - id: branch_b1
+      label: B1 暴力夺取
+      description: 柳夜路线
+    - id: branch_b2
+      label: B2 核平衡
+      description: 索菲亚路线
+    - id: branch_b3
+      label: B3 改变棋盘
+      description: 制度路线（成功结局）
+    - id: ending_success
+      label: "宪章第一条"
+      description: 供应链中立原则确立
+    - id: scene_epilogue
+      label: "余波：未竟之问"
+      description: 伏笔第二章
+  transitions:
+    - from: scene_opening
+      to: scene_medical_bay
+    - from: scene_medical_bay
+      to: scene_command_hall
+    - from: scene_command_hall
+      to: [branch_a1, branch_a2, branch_a3]
+      via: dp_1
+    - from: [branch_a1, branch_a2, branch_a3]
+      to: transition_solar_storm
+      condition: at_least_one_completed
+    - from: transition_solar_storm
+      to: scene_joint_meeting
+    - from: scene_joint_meeting
+      to: [branch_b1, branch_b2, branch_b3]
+      via: dp_2
+    - from: branch_b3
+      to: ending_success
+      condition: judge_success
+    - from: branch_b3
+      to: ending_failure
+      condition: judge_failure
+    - from: ending_success
+      to: scene_epilogue
